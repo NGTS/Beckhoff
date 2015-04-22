@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<PlcGivenDataInfo><VarConfigAddresses><VarConfigAddress><Name>.COMin_KL6031</Name><Type Decoration="10022A21">KL6inData22B</Type><IGroup>61472</IGroup><IOffset>12</IOffset><BitSize>192</BitSize></VarConfigAddress><VarConfigAddress><Name>.COMout_KL6031</Name><Type Decoration="10022970">KL6outData22B</Type><IGroup>61488</IGroup><IOffset>4</IOffset><BitSize>192</BitSize></VarConfigAddress></VarConfigAddresses></PlcGivenDataInfo>
