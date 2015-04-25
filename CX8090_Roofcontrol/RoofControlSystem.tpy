@@ -4,7 +4,7 @@
 	<ProjectInfo>
 		<Path>C:\Documents and Settings\lambergr\Desktop\Beckhoff_building\CX8090_Roofcontrol\RoofControlSystem.pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2015-04-19T06:58:06</ChangeDate>
+		<ChangeDate>2015-04-25T16:15:25</ChangeDate>
 		<Library>
 			<Name>TcBase.lib</Name>
 			<Path>C:\TWINCAT\PLC\LIB\TcBase.lib</Path>
@@ -86,7 +86,7 @@
 	</DirectoryInfos>
 	<DataTypes>
 		<DataType>
-			<Name Decoration="1001034F" Crc32="3122400110" LastChange="2015-04-19T03:37:35">BREAKERS</Name>
+			<Name Decoration="1001034F" Crc32="3122400110" LastChange="2015-04-25T16:15:25">BREAKERS</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">tripped</Name>
@@ -100,7 +100,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1001051A" Crc32="2412481673" LastChange="2015-04-19T03:37:35">DAYLIGHT</Name>
+			<Name Decoration="1001051A" Crc32="2412481673" LastChange="2015-04-25T16:15:25">DAYLIGHT</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">Detects_light</Name>
@@ -109,12 +109,12 @@
 				<BitOffs>0</BitOffs>
 			</SubItem>
 			<FbInfo>
-				<CodeIndex>300</CodeIndex>
-				<InitIndex>301</InitIndex>
+				<CodeIndex>299</CodeIndex>
+				<InitIndex>300</InitIndex>
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100104CC" Crc32="4034076496" LastChange="2015-04-19T03:37:35">RAIN</Name>
+			<Name Decoration="100104CC" Crc32="4034076496" LastChange="2015-04-25T16:15:25">RAIN</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">Detects_rain</Name>
@@ -123,12 +123,12 @@
 				<BitOffs>0</BitOffs>
 			</SubItem>
 			<FbInfo>
-				<CodeIndex>324</CodeIndex>
-				<InitIndex>325</InitIndex>
+				<CodeIndex>317</CodeIndex>
+				<InitIndex>318</InitIndex>
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1003390D" Crc32="1549553351" LastChange="2015-04-19T03:37:35">CLOSE_SENSORS</Name>
+			<Name Decoration="1003390D" Crc32="1549553351" LastChange="2015-04-25T16:15:25">CLOSE_SENSORS</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>Daylight_FB</Name>
@@ -154,7 +154,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100766CE" Crc32="1968834252" LastChange="2015-04-19T03:37:35">HEART_BEAT</Name>
+			<Name Decoration="100766CE" Crc32="3928799243" LastChange="2015-04-25T16:15:25">HEART_BEAT</Name>
 			<BitSize>640</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">Timer1</Name>
@@ -202,108 +202,132 @@
 				<BitOffs>616</BitOffs>
 			</SubItem>
 			<FbInfo>
-				<CodeIndex>309</CodeIndex>
-				<InitIndex>310</InitIndex>
+				<CodeIndex>304</CodeIndex>
+				<InitIndex>305</InitIndex>
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10071E81" Crc32="3436726584" LastChange="2015-04-19T03:37:35">POSITION_ROOF_1</Name>
-			<BitSize>80</BitSize>
+			<Name Decoration="100966F0" Crc32="0521255301" LastChange="2015-04-25T16:15:25">POSITION_ROOF_1</Name>
+			<BitSize>480</BitSize>
+			<SubItem>
+				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_left_Initial_Pos_1</Name>
+				<Type Decoration="10060D24">TON</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_arrive_New_Pos_1</Name>
+				<Type Decoration="10060D24">TON</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
 			<SubItem>
 				<Name>count1</Name>
 				<Type>INT</Type>
 				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
+				<BitOffs>384</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>count2</Name>
 				<Type>INT</Type>
 				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
+				<BitOffs>400</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">isClosed</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>32</BitOffs>
+				<BitOffs>416</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">isOpen</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>40</BitOffs>
+				<BitOffs>424</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">error</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>48</BitOffs>
+				<BitOffs>432</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">NotLeftInitialPosition</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>56</BitOffs>
+				<BitOffs>440</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">NotArrivedFinalPosition</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>64</BitOffs>
+				<BitOffs>448</BitOffs>
 			</SubItem>
 			<FbInfo>
-				<CodeIndex>319</CodeIndex>
-				<InitIndex>320</InitIndex>
+				<CodeIndex>312</CodeIndex>
+				<InitIndex>313</InitIndex>
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="10071E81" Crc32="3894371422" LastChange="2015-04-19T03:37:35">POSITION_ROOF_2</Name>
-			<BitSize>80</BitSize>
+			<Name Decoration="100966F4" Crc32="1686880187" LastChange="2015-04-25T16:15:25">POSITION_ROOF_2</Name>
+			<BitSize>480</BitSize>
+			<SubItem>
+				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_left_Initial_Pos_2</Name>
+				<Type Decoration="10060D24">TON</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_arrive_New_Pos_2</Name>
+				<Type Decoration="10060D24">TON</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
 			<SubItem>
 				<Name>count1</Name>
 				<Type>INT</Type>
 				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
+				<BitOffs>384</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>count2</Name>
 				<Type>INT</Type>
 				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
+				<BitOffs>400</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">isClosed</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>32</BitOffs>
+				<BitOffs>416</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">isOpen</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>40</BitOffs>
+				<BitOffs>424</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">error</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>48</BitOffs>
+				<BitOffs>432</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">NotLeftInitialPosition</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>56</BitOffs>
+				<BitOffs>440</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name FbParameter="Output">NotArrivedFinalPosition</Name>
 				<Type>BOOL</Type>
 				<BitSize>8</BitSize>
-				<BitOffs>64</BitOffs>
+				<BitOffs>448</BitOffs>
 			</SubItem>
 			<FbInfo>
-				<CodeIndex>321</CodeIndex>
-				<InitIndex>322</InitIndex>
+				<CodeIndex>314</CodeIndex>
+				<InitIndex>315</InitIndex>
 			</FbInfo>
 		</DataType>
 		<DataType>
@@ -5304,7 +5328,7 @@
 	</Functions>
 	<Programs>
 		<Program>
-			<Name Decoration="10038C45" Crc32="2800820387" LastChange="2015-04-19T03:37:35">CLOSE_HANDLER</Name>
+			<Name Decoration="10038C45" Crc32="2800820387" LastChange="2015-04-25T16:15:25">CLOSE_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>293</CodeIndex>
 				<Symbol>
@@ -5319,13 +5343,13 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="0753477998" LastChange="2015-04-19T03:37:35">CLOSE_ORDER</Name>
+			<Name Decoration="10000000" Crc32="4209301955" LastChange="2015-04-25T16:15:25">CLOSE_ORDER</Name>
 			<PrgInfo>
 				<CodeIndex>294</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10026A1F" Crc32="1149754258" LastChange="2015-04-19T06:05:16">CMD_HANDLER</Name>
+			<Name Decoration="10026A1F" Crc32="1149754258" LastChange="2015-04-25T16:15:25">CMD_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>297</CodeIndex>
 				<Symbol>
@@ -5337,7 +5361,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10027CC3" Crc32="1743593677" LastChange="2015-04-19T06:08:42">CONTROL_REGISTER</Name>
+			<Name Decoration="10027CC3" Crc32="2864311508" LastChange="2015-04-25T16:15:25">CONTROL_REGISTER</Name>
 			<PrgInfo>
 				<CodeIndex>298</CodeIndex>
 				<Symbol>
@@ -5349,18 +5373,9 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10017A4E" Crc32="2921729894" LastChange="2015-04-19T03:37:35">CONTROL_WEATHER_STATION</Name>
+			<Name Decoration="100D2712" Crc32="0039833487" LastChange="2015-04-25T16:15:25">DYLOS_DUST_VALUE</Name>
 			<PrgInfo>
-				<CodeIndex>299</CodeIndex>
-				<Symbol>
-					<Name>CONTROL_WEATHER_STATION.HB</Name>
-				</Symbol>
-			</PrgInfo>
-		</Program>
-		<Program>
-			<Name Decoration="100D2712" Crc32="0039833487" LastChange="2015-04-19T03:37:35">DYLOS_DUST_VALUE</Name>
-			<PrgInfo>
-				<CodeIndex>306</CodeIndex>
+				<CodeIndex>301</CodeIndex>
 				<Symbol>
 					<Name>DYLOS_DUST_VALUE.Receive</Name>
 				</Symbol>
@@ -5403,24 +5418,30 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10033502" Crc32="4057576144" LastChange="2015-04-19T03:58:54">Error_Handler</Name>
+			<Name Decoration="10052F97" Crc32="3771883419" LastChange="2015-04-25T16:15:25">ERROR_HANDLER</Name>
 			<PrgInfo>
-				<CodeIndex>307</CodeIndex>
+				<CodeIndex>302</CodeIndex>
 				<Symbol>
-					<Name>Error_Handler.CMD_trigger</Name>
+					<Name>ERROR_HANDLER.CMD_trigger</Name>
 				</Symbol>
 				<Symbol>
-					<Name>Error_Handler.Trig</Name>
+					<Name>ERROR_HANDLER.Trig</Name>
 				</Symbol>
 				<Symbol>
-					<Name>Error_Handler.count</Name>
+					<Name>ERROR_HANDLER.count</Name>
+				</Symbol>
+				<Symbol>
+					<Name>ERROR_HANDLER.side_1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>ERROR_HANDLER.side_2</Name>
 				</Symbol>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="1003DF50" Crc32="0717579135" LastChange="2015-04-19T03:37:35">FAST</Name>
+			<Name Decoration="1003DF50" Crc32="0717579135" LastChange="2015-04-25T16:15:25">FAST</Name>
 			<PrgInfo>
-				<CodeIndex>308</CodeIndex>
+				<CodeIndex>303</CodeIndex>
 				<Symbol>
 					<Name>FAST.COMportControl</Name>
 				</Symbol>
@@ -5433,9 +5454,9 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10050252" Crc32="3920062813" LastChange="2015-04-19T03:37:35">M_DUST_VALUE</Name>
+			<Name Decoration="10050252" Crc32="3920062813" LastChange="2015-04-25T16:15:25">M_DUST_VALUE</Name>
 			<PrgInfo>
-				<CodeIndex>313</CodeIndex>
+				<CodeIndex>306</CodeIndex>
 				<Symbol>
 					<Name>M_DUST_VALUE.i</Name>
 				</Symbol>
@@ -5454,21 +5475,21 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="0448334622" LastChange="2015-04-19T05:30:37">MAIN</Name>
+			<Name Decoration="10000000" Crc32="3477475604" LastChange="2015-04-25T16:15:25">MAIN</Name>
 			<PrgInfo>
-				<CodeIndex>314</CodeIndex>
+				<CodeIndex>307</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="4039940123" LastChange="2015-04-19T03:37:35">MONITORING</Name>
+			<Name Decoration="10000000" Crc32="1817223882" LastChange="2015-04-25T16:15:25">MONITORING</Name>
 			<PrgInfo>
-				<CodeIndex>315</CodeIndex>
+				<CodeIndex>308</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10038A70" Crc32="4098111726" LastChange="2015-04-19T03:37:35">OPEN_HANDLER</Name>
+			<Name Decoration="10038A70" Crc32="4098111726" LastChange="2015-04-25T16:15:25">OPEN_HANDLER</Name>
 			<PrgInfo>
-				<CodeIndex>316</CodeIndex>
+				<CodeIndex>309</CodeIndex>
 				<Symbol>
 					<Name>OPEN_HANDLER.Breakers_FB</Name>
 				</Symbol>
@@ -5481,27 +5502,42 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="2180114496" LastChange="2015-04-19T03:37:35">OPEN_ORDER</Name>
+			<Name Decoration="10000000" Crc32="2180114496" LastChange="2015-04-25T16:15:25">OPEN_ORDER</Name>
 			<PrgInfo>
-				<CodeIndex>317</CodeIndex>
+				<CodeIndex>310</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100239EA" Crc32="3404802647" LastChange="2015-04-19T03:37:35">POSITION</Name>
+			<Name Decoration="100536AA" Crc32="2542446588" LastChange="2015-04-25T16:15:25">POSITION</Name>
 			<PrgInfo>
-				<CodeIndex>318</CodeIndex>
+				<CodeIndex>311</CodeIndex>
 				<Symbol>
 					<Name>POSITION.CMD_trigger</Name>
 				</Symbol>
 				<Symbol>
 					<Name>POSITION.Timer</Name>
 				</Symbol>
+				<Symbol>
+					<Name>POSITION.side_1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>POSITION.side_2</Name>
+				</Symbol>
+				<Symbol>
+					<Name>POSITION.Test</Name>
+				</Symbol>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="1458218737" LastChange="2015-04-19T03:37:35">Qalarm_Handler</Name>
+			<Name Decoration="1002FA95" Crc32="3696744636" LastChange="2015-04-25T16:15:25">QALARM_HANDLER</Name>
 			<PrgInfo>
-				<CodeIndex>323</CodeIndex>
+				<CodeIndex>316</CodeIndex>
+				<Symbol>
+					<Name>QALARM_HANDLER.side_1</Name>
+				</Symbol>
+				<Symbol>
+					<Name>QALARM_HANDLER.side_2</Name>
+				</Symbol>
 			</PrgInfo>
 		</Program>
 	</Programs>
@@ -5559,31 +5595,24 @@
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name TaskPrio="1">CONTROL_WEATHER_STATION.HB</Name>
-			<Type Decoration="100766CE">HEART_BEAT</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>924</IOffset>
-			<BitSize>640</BitSize>
-		</Symbol>
-		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.Receive</Name>
 			<Type Decoration="100D9A9B">ReceiveString</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1004</IOffset>
+			<IOffset>924</IOffset>
 			<BitSize>6752</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.ReceivedString</Name>
 			<Type Decoration="40000051">STRING(80)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1848</IOffset>
+			<IOffset>1768</IOffset>
 			<BitSize>648</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.LastReceivedString</Name>
 			<Type Decoration="40000051">STRING(80)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>1929</IOffset>
+			<IOffset>1849</IOffset>
 			<BitSize>648</BitSize>
 		</Symbol>
 		<Symbol>
@@ -5597,176 +5626,225 @@
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.ReceiveBusy</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2010</IOffset>
+			<IOffset>1930</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name>DYLOS_DUST_VALUE.ReceiveError</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2011</IOffset>
+			<IOffset>1931</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.ReceiveErrorID</Name>
 			<Type Decoration="3000031C">ComError_t</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2012</IOffset>
+			<IOffset>1932</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.ReceiveTimeout</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2014</IOffset>
+			<IOffset>1934</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.ReceiveCounter</Name>
 			<Type>UDINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2016</IOffset>
+			<IOffset>1936</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.DylosSmallParticles</Name>
 			<Type Decoration="40000051">STRING(80)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2020</IOffset>
+			<IOffset>1940</IOffset>
 			<BitSize>648</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.DylosBigParticles</Name>
 			<Type Decoration="40000051">STRING(80)</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2101</IOffset>
+			<IOffset>2021</IOffset>
 			<BitSize>648</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.P1</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2182</IOffset>
+			<IOffset>2102</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">DYLOS_DUST_VALUE.P2</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2184</IOffset>
+			<IOffset>2104</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name>Error_Handler.CMD_trigger</Name>
+			<Name>ERROR_HANDLER.CMD_trigger</Name>
 			<Type Decoration="1003051C">R_TRIG</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2186</IOffset>
+			<IOffset>2106</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name>Error_Handler.Trig</Name>
+			<Name>ERROR_HANDLER.Trig</Name>
 			<Type Decoration="1003051C">R_TRIG</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2189</IOffset>
+			<IOffset>2109</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name>Error_Handler.count</Name>
+			<Name>ERROR_HANDLER.count</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2192</IOffset>
+			<IOffset>2112</IOffset>
 			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">ERROR_HANDLER.side_1</Name>
+			<Type Decoration="100966F0">POSITION_ROOF_1</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>2116</IOffset>
+			<BitSize>480</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">ERROR_HANDLER.side_2</Name>
+			<Type Decoration="100966F4">POSITION_ROOF_2</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>2176</IOffset>
+			<BitSize>480</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="3">FAST.COMportControl</Name>
 			<Type Decoration="10228245">SerialLineControl</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2196</IOffset>
+			<IOffset>2236</IOffset>
 			<BitSize>10304</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="3">FAST.COMportControlError</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2015</IOffset>
+			<IOffset>1935</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="3">FAST.COMportControlErrorID</Name>
 			<Type Decoration="3000031C">ComError_t</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>2194</IOffset>
+			<IOffset>2114</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">M_DUST_VALUE.i</Name>
 			<Type>INT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3484</IOffset>
+			<IOffset>3524</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">M_DUST_VALUE.HB</Name>
 			<Type Decoration="100766CE">HEART_BEAT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3488</IOffset>
+			<IOffset>3528</IOffset>
 			<BitSize>640</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">M_DUST_VALUE.HB2</Name>
 			<Type Decoration="100766CE">HEART_BEAT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3568</IOffset>
+			<IOffset>3608</IOffset>
 			<BitSize>640</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">M_DUST_VALUE.Mean_MDust_Value</Name>
 			<Type>UINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3486</IOffset>
+			<IOffset>3526</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">M_DUST_VALUE.Sum_MDust_Value</Name>
 			<Type>UINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3648</IOffset>
+			<IOffset>3688</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">OPEN_HANDLER.Breakers_FB</Name>
 			<Type Decoration="1001034F">BREAKERS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3650</IOffset>
+			<IOffset>3690</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">OPEN_HANDLER.T_open</Name>
 			<Type Decoration="10060D24">TON</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3652</IOffset>
+			<IOffset>3692</IOffset>
 			<BitSize>192</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">OPEN_HANDLER.CloseSensors_FB</Name>
 			<Type Decoration="1003390D">CLOSE_SENSORS</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3676</IOffset>
+			<IOffset>3716</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">POSITION.CMD_trigger</Name>
 			<Type Decoration="1003051C">R_TRIG</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3679</IOffset>
+			<IOffset>3719</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name>POSITION.Timer</Name>
 			<Type Decoration="10060D24">TON</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3684</IOffset>
+			<IOffset>3724</IOffset>
 			<BitSize>192</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">POSITION.side_1</Name>
+			<Type Decoration="100966F0">POSITION_ROOF_1</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>3748</IOffset>
+			<BitSize>480</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">POSITION.side_2</Name>
+			<Type Decoration="100966F4">POSITION_ROOF_2</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>3808</IOffset>
+			<BitSize>480</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name>POSITION.Test</Name>
+			<Type>INT</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>3722</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">QALARM_HANDLER.side_1</Name>
+			<Type Decoration="100966F0">POSITION_ROOF_1</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>3868</IOffset>
+			<BitSize>480</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name TaskPrio="1">QALARM_HANDLER.side_2</Name>
+			<Type Decoration="100966F4">POSITION_ROOF_2</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>3928</IOffset>
+			<BitSize>480</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name Constant="1" TaskPrio="1">.CMD_NONE</Name>
@@ -7128,111 +7206,63 @@
 			<Name TaskPrio="1">.CTR_COPY</Name>
 			<Type>UINT</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3744</IOffset>
+			<IOffset>4026</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.IS_OCS_CONNECTED</Name>
 			<Type>BOOL</Type>
-			<Comment>
-				<![CDATA[In BLOCKED_1 and BLOCKED_2]]>
-			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>3683</IOffset>
+			<IOffset>4025</IOffset>
 			<BitSize>8</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.HB_left_Initial_Pos_1</Name>
-			<Type Decoration="10060D24">TON</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3748</IOffset>
-			<BitSize>192</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.HB_arrive_New_Pos_1</Name>
-			<Type Decoration="10060D24">TON</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3772</IOffset>
-			<BitSize>192</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.HB_left_Initial_Pos_2</Name>
-			<Type Decoration="10060D24">TON</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3796</IOffset>
-			<BitSize>192</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.HB_arrive_New_Pos_2</Name>
-			<Type Decoration="10060D24">TON</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3820</IOffset>
-			<BitSize>192</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.side_1</Name>
-			<Type Decoration="10071E81">POSITION_ROOF_1</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3844</IOffset>
-			<BitSize>80</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name TaskPrio="1">.side_2</Name>
-			<Type Decoration="10071E81">POSITION_ROOF_2</Type>
-			<IGroup>16448</IGroup>
-			<IOffset>3854</IOffset>
-			<BitSize>80</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name>.CMD_trig</Name>
 			<Type Decoration="1003051C">R_TRIG</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3864</IOffset>
+			<IOffset>4028</IOffset>
 			<BitSize>24</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.NotLeftTime</Name>
 			<Type>TIME</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3868</IOffset>
+			<IOffset>4032</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.NotArrivedTime</Name>
 			<Type>TIME</Type>
-			<Comment>
-				<![CDATA[Used for now]]>
-			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>3872</IOffset>
+			<IOffset>4036</IOffset>
 			<BitSize>32</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name>.RESTORE_REGISTER</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3746</IOffset>
+			<IOffset>4031</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.report_close</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3747</IOffset>
+			<IOffset>4040</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.report_open</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3867</IOffset>
+			<IOffset>4041</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
 			<Name TaskPrio="1">.report1</Name>
 			<Type>BOOL</Type>
 			<IGroup>16448</IGroup>
-			<IOffset>3876</IOffset>
+			<IOffset>4042</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -7242,7 +7272,7 @@
 				<![CDATA[Dust Dylos Interface serial bus terminal KL6031]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>3877</IOffset>
+			<IOffset>4043</IOffset>
 			<BitSize>8</BitSize>
 		</Symbol>
 		<Symbol>
@@ -7272,7 +7302,7 @@
 				<![CDATA[Receive data buffer; used with all receive function blocks]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>3878</IOffset>
+			<IOffset>4044</IOffset>
 			<BitSize>2512</BitSize>
 		</Symbol>
 		<Symbol>
@@ -7282,7 +7312,7 @@
 				<![CDATA[Transmit data buffer; used with all receive function blocks]]>
 			</Comment>
 			<IGroup>16448</IGroup>
-			<IOffset>4192</IOffset>
+			<IOffset>4358</IOffset>
 			<BitSize>2512</BitSize>
 		</Symbol>
 		<Symbol>
@@ -7785,21 +7815,21 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.Old_HeartBeat_Weather_mem</Name>
+			<Name Static="MArea">.Old_HeartBeat_Weather_mem</Name>
 			<Type>WORD</Type>
 			<IGroup>16416</IGroup>
 			<IOffset>1050</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.HeartBeat_Weather_mem</Name>
+			<Name Static="MArea">.HeartBeat_Weather_mem</Name>
 			<Type>WORD</Type>
 			<IGroup>16416</IGroup>
 			<IOffset>1052</IOffset>
 			<BitSize>16</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.Alarm_Weather_mem</Name>
+			<Name Static="MArea">.Alarm_Weather_mem</Name>
 			<Type>BOOL</Type>
 			<Comment>
 				<![CDATA[********************** Monitoring ***************************]]>
@@ -8139,7 +8169,7 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.alarm_weather</Name>
+			<Name Static="MArea">.alarm_weather</Name>
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
 			<IOffset>117</IOffset>
@@ -8307,18 +8337,11 @@
 		<Symbol>
 			<Name Static="MArea">.EN_DYLOS_DUST_SENSOR</Name>
 			<Type>BOOL</Type>
-			<IGroup>16417</IGroup>
-			<IOffset>8220</IOffset>
-			<BitSize>1</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.EN_CONTROL_WEATHER_STATION</Name>
-			<Type>BOOL</Type>
 			<Comment>
 				<![CDATA[**********************ROOF Register*****************************]]>
 			</Comment>
 			<IGroup>16417</IGroup>
-			<IOffset>8221</IOffset>
+			<IOffset>8220</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
@@ -8987,7 +9010,7 @@
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.alarm_weather_SIM</Name>
+			<Name Static="MArea">.alarm_weather_SIM</Name>
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
 			<IOffset>9857</IOffset>
