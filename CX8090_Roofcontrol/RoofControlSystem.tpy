@@ -2,9 +2,9 @@
 <!--This file is created by the TCatPlcCtrl automatically. Manually changes will be overwritten!-->
 <PlcProjectInfo xmlns:p="http://www.beckhoff.com/2002/01/TcPlcProjectDesc">
 	<ProjectInfo>
-		<Path>C:\Documents and Settings\lambergr\Desktop\Beckhoff_building\CX8090_Roofcontrol\RoofControlSystem.pro</Path>
+		<Path>E:\CX8090_Roofcontrol\RoofControlSystem.pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2015-04-25T16:15:25</ChangeDate>
+		<ChangeDate>2015-04-25T18:56:25</ChangeDate>
 		<Library>
 			<Name>TcBase.lib</Name>
 			<Path>C:\TWINCAT\PLC\LIB\TcBase.lib</Path>
@@ -86,7 +86,7 @@
 	</DirectoryInfos>
 	<DataTypes>
 		<DataType>
-			<Name Decoration="1001034F" Crc32="3122400110" LastChange="2015-04-25T16:15:25">BREAKERS</Name>
+			<Name Decoration="1001034F" Crc32="3122400110" LastChange="2015-04-25T18:56:25">BREAKERS</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">tripped</Name>
@@ -100,7 +100,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1001051A" Crc32="2412481673" LastChange="2015-04-25T16:15:25">DAYLIGHT</Name>
+			<Name Decoration="1001051A" Crc32="1773667982" LastChange="2015-04-25T18:56:25">DAYLIGHT</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">Detects_light</Name>
@@ -114,7 +114,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100104CC" Crc32="4034076496" LastChange="2015-04-25T16:15:25">RAIN</Name>
+			<Name Decoration="100104CC" Crc32="4034076496" LastChange="2015-04-25T18:56:25">RAIN</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name FbParameter="Output">Detects_rain</Name>
@@ -128,7 +128,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="1003390D" Crc32="1549553351" LastChange="2015-04-25T16:15:25">CLOSE_SENSORS</Name>
+			<Name Decoration="1003390D" Crc32="1549553351" LastChange="2015-04-25T18:56:25">CLOSE_SENSORS</Name>
 			<BitSize>24</BitSize>
 			<SubItem>
 				<Name>Daylight_FB</Name>
@@ -154,7 +154,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100766CE" Crc32="3928799243" LastChange="2015-04-25T16:15:25">HEART_BEAT</Name>
+			<Name Decoration="100766CE" Crc32="3928799243" LastChange="2015-04-25T18:56:25">HEART_BEAT</Name>
 			<BitSize>640</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">Timer1</Name>
@@ -207,7 +207,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100966F0" Crc32="0521255301" LastChange="2015-04-25T16:15:25">POSITION_ROOF_1</Name>
+			<Name Decoration="100966F0" Crc32="0521255301" LastChange="2015-04-25T18:56:25">POSITION_ROOF_1</Name>
 			<BitSize>480</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_left_Initial_Pos_1</Name>
@@ -269,7 +269,7 @@
 			</FbInfo>
 		</DataType>
 		<DataType>
-			<Name Decoration="100966F4" Crc32="1686880187" LastChange="2015-04-25T16:15:25">POSITION_ROOF_2</Name>
+			<Name Decoration="100966F4" Crc32="1686880187" LastChange="2015-04-25T18:56:25">POSITION_ROOF_2</Name>
 			<BitSize>480</BitSize>
 			<SubItem>
 				<Name IsDefinedInLibrary="1" Library="C:\TWINCAT\PLC\LIB\STANDARD.LIB">HB_left_Initial_Pos_2</Name>
@@ -5328,7 +5328,7 @@
 	</Functions>
 	<Programs>
 		<Program>
-			<Name Decoration="10038C45" Crc32="2800820387" LastChange="2015-04-25T16:15:25">CLOSE_HANDLER</Name>
+			<Name Decoration="10038C45" Crc32="2800820387" LastChange="2015-04-25T18:56:25">CLOSE_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>293</CodeIndex>
 				<Symbol>
@@ -5343,13 +5343,13 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="4209301955" LastChange="2015-04-25T16:15:25">CLOSE_ORDER</Name>
+			<Name Decoration="10000000" Crc32="4209301955" LastChange="2015-04-25T18:56:25">CLOSE_ORDER</Name>
 			<PrgInfo>
 				<CodeIndex>294</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10026A1F" Crc32="1149754258" LastChange="2015-04-25T16:15:25">CMD_HANDLER</Name>
+			<Name Decoration="10026A1F" Crc32="1149754258" LastChange="2015-04-25T18:56:25">CMD_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>297</CodeIndex>
 				<Symbol>
@@ -5361,7 +5361,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10027CC3" Crc32="2864311508" LastChange="2015-04-25T16:15:25">CONTROL_REGISTER</Name>
+			<Name Decoration="10027CC3" Crc32="2864311508" LastChange="2015-04-25T18:56:25">CONTROL_REGISTER</Name>
 			<PrgInfo>
 				<CodeIndex>298</CodeIndex>
 				<Symbol>
@@ -5373,7 +5373,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100D2712" Crc32="0039833487" LastChange="2015-04-25T16:15:25">DYLOS_DUST_VALUE</Name>
+			<Name Decoration="100D2712" Crc32="0039833487" LastChange="2015-04-25T18:56:25">DYLOS_DUST_VALUE</Name>
 			<PrgInfo>
 				<CodeIndex>301</CodeIndex>
 				<Symbol>
@@ -5418,7 +5418,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10052F97" Crc32="3771883419" LastChange="2015-04-25T16:15:25">ERROR_HANDLER</Name>
+			<Name Decoration="10052F97" Crc32="3771883419" LastChange="2015-04-25T18:56:25">ERROR_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>302</CodeIndex>
 				<Symbol>
@@ -5439,7 +5439,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="1003DF50" Crc32="0717579135" LastChange="2015-04-25T16:15:25">FAST</Name>
+			<Name Decoration="1003DF50" Crc32="0717579135" LastChange="2015-04-25T18:56:25">FAST</Name>
 			<PrgInfo>
 				<CodeIndex>303</CodeIndex>
 				<Symbol>
@@ -5454,7 +5454,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10050252" Crc32="3920062813" LastChange="2015-04-25T16:15:25">M_DUST_VALUE</Name>
+			<Name Decoration="10050252" Crc32="3920062813" LastChange="2015-04-25T18:56:25">M_DUST_VALUE</Name>
 			<PrgInfo>
 				<CodeIndex>306</CodeIndex>
 				<Symbol>
@@ -5475,19 +5475,19 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="3477475604" LastChange="2015-04-25T16:15:25">MAIN</Name>
+			<Name Decoration="10000000" Crc32="3477475604" LastChange="2015-04-25T18:56:25">MAIN</Name>
 			<PrgInfo>
 				<CodeIndex>307</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="1817223882" LastChange="2015-04-25T16:15:25">MONITORING</Name>
+			<Name Decoration="10000000" Crc32="1817223882" LastChange="2015-04-25T18:56:25">MONITORING</Name>
 			<PrgInfo>
 				<CodeIndex>308</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10038A70" Crc32="4098111726" LastChange="2015-04-25T16:15:25">OPEN_HANDLER</Name>
+			<Name Decoration="10038A70" Crc32="4098111726" LastChange="2015-04-25T18:56:25">OPEN_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>309</CodeIndex>
 				<Symbol>
@@ -5502,13 +5502,13 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="2180114496" LastChange="2015-04-25T16:15:25">OPEN_ORDER</Name>
+			<Name Decoration="10000000" Crc32="2180114496" LastChange="2015-04-25T18:56:25">OPEN_ORDER</Name>
 			<PrgInfo>
 				<CodeIndex>310</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100536AA" Crc32="2542446588" LastChange="2015-04-25T16:15:25">POSITION</Name>
+			<Name Decoration="100536AA" Crc32="2542446588" LastChange="2015-04-25T18:56:25">POSITION</Name>
 			<PrgInfo>
 				<CodeIndex>311</CodeIndex>
 				<Symbol>
@@ -5529,7 +5529,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="1002FA95" Crc32="3696744636" LastChange="2015-04-25T16:15:25">QALARM_HANDLER</Name>
+			<Name Decoration="1002FA95" Crc32="3696744636" LastChange="2015-04-25T18:56:25">QALARM_HANDLER</Name>
 			<PrgInfo>
 				<CodeIndex>316</CodeIndex>
 				<Symbol>
