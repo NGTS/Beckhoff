@@ -1,0 +1,268 @@
+<?xml version="1.0" ?>
+<PLC>
+  <!---------------- Settings for the PLC ----------------->
+  <ModbusConnection ip="10.2.5.92" port="502" />
+  <Version n1="4" n2="0" n3="0" n4="0"/>
+  <ReadOnlyRegisters>
+    <RegisterRO name="RoofPosition" address="12288"><!-- 0x3000-->
+      <Bits>
+	<SingleBit name="O1" description="is open side 1" position="0"/>
+	<SingleBit name="C1" description="is closed side 1" position="1"/>
+	<SingleBit name="E1" description="error side 1" position="2"/> 
+	<SingleBit name="O2" description="is open side 2" position="3"/>
+	<SingleBit name="C2" description="is closed side 2" position="4"/>
+	<SingleBit name="E2" description="error side 2" position="5"/>
+      </Bits>
+    </RegisterRO><!-- 0x3000-->
+    <RegisterRO name="SensorsRoofPosition" address="12289"><!-- 0x3001-->
+      <Bits>
+	<SingleBit name="SC1A" description="status closed side 1 A" position="0"/> 
+	<SingleBit name="SC1B" description="status closed side 1 B" position="1"/> 
+	<SingleBit name="SO1A" description="status open side 1 A" position="2"/>
+	<SingleBit name="SO1B" description="status open side 1 B" position="3"/> 
+	<SingleBit name="SC2A" description="status closed side 2 A" position="4"/> 
+	<SingleBit name="SC2B" description="status closed side 2 B" position="5"/> 
+	<SingleBit name="SO2A" description="status open side 2 A" position="6"/> 
+	<SingleBit name="SO2B" description="status open side 2 B" position="7"/> 
+	<SingleBit name="EC1A" description="error closed side 1 A" position="8"/> 
+	<SingleBit name="EC1B" description="error closed side 1 B" position="9"/> 
+	<SingleBit name="EO1A" description="error open side 1 A" position="10"/> 
+	<SingleBit name="EO1B" description="error open side 1 B" position="11"/> 
+	<SingleBit name="EC2A" description="error closed side 2 A" position="12"/> 
+	<SingleBit name="EC2B" description="error closed side 2 B" position="13"/> 
+	<SingleBit name="EO2A" description="error open side 2 A" position="14"/> 
+	<SingleBit name="EO2B" description="error open side 2 B" position="15"/> 
+      </Bits>
+    </RegisterRO><!-- 0x3001-->
+    <RegisterRO name="SensorsStatus" address="12290"><!-- 0x3002-->
+      <Bits>
+	<SingleBit name="DUS1" description="Mdust status 1" position="0"/>
+	<SingleBit name="RNV" description="rain value" position="1"/>
+    <SingleBit name="DLS" description="daylight status" position="2"/>
+      </Bits>
+    </RegisterRO><!-- 0x3002-->
+    <RegisterRO name="MeanMDustValue" address="12291"/><!-- 0x3003-->
+    <RegisterRO name="MDustValuemem" address="12292"/><!-- 0x3004-->
+    <RegisterRO name="SensorsDetecting" address="12293"/><!-- 0x3005-->
+    <RegisterRO name="CmdRemoteCtrBreakers" address="12294"><!-- 0x3006-->
+      <Bits>
+	<SingleBit name="O" description="opening!" position="0"/>
+	<SingleBit name="C" description="closing!" position="1"/>
+	<SingleBit name="HAND" description="CMD_HAND" position="2"/>
+	<SingleBit name="B1" description="breaker 1" position="6"/> 
+	<SingleBit name="B2" description="breaker 2" position="7"/> 
+	<SingleBit name="B3" description="breaker 3" position="8"/> 
+	<SingleBit name="UPS1" description="UPS1 4" position="9"/> 
+	<SingleBit name="UPS2" description="UPS2 5" position="10"/> 
+      </Bits>
+    </RegisterRO><!-- 0x3006-->
+    <RegisterRO name="Alarms" address="12295"><!-- 0x3007-->
+      <Bits>
+	<SingleBit name="AL" description="alarm" position="0"/> 
+	<SingleBit name="ER1" description="error side 1" position="1"/> 
+	<SingleBit name="ER2" description="error side 2" position="2"/> 
+	<SingleBit name="BL1" description="blocked side 1" position="3"/> 
+	<SingleBit name="BL2" description="blocked side 2" position="4"/>
+    <SingleBit name="ALW" description="alarm weather" position="5"/>
+    <SingleBit name="PR1" description="position reached 1" position="6"/>
+    <SingleBit name="PR2" description="position reached 2" position="7"/>
+    <SingleBit name="PR"  description="position reached"   position="8"/>
+      </Bits>
+    </RegisterRO><!-- 0x3007-->
+    <RegisterRO name="SoftwareVersioning1" address="12296"/><!-- 0x3008-->
+    <RegisterRO name="SoftwareVersioning2" address="12297"/><!-- 0x3009-->
+    <RegisterRO name="Monitoring" address="12298"><!-- 0x300A-->
+      <Bits>
+	<SingleBit name="SO" description="STOP Open" position="0"/> 
+	<SingleBit name="SC" description="STOP Close" position="1"/> 
+	<SingleBit name="AUTO" description="Switch AUTO" position="2"/> 
+	<SingleBit name="MAN" description="Switch MANUAL" position="3"/> 
+	<SingleBit name="ROL1" description="Roof Open Lamp 1" position="4"/> 
+	<SingleBit name="ROL2" description="Roof Open Lamp 2" position="5"/> 
+	<SingleBit name="RCL1" description="Roof Close Lamp 1" position="6"/> 
+	<SingleBit name="RCL2" description="Roof Close Lamp 2" position="7"/> 
+	<SingleBit name="MR" description="MR: Main Motor" position="8"/> 
+	<SingleBit name="nMR" description="not MR: DC Motor backup" position="9"/> 
+	<SingleBit name="SRS" description="Safety Relay STOP" position="10"/>
+      </Bits>
+    </RegisterRO><!-- 0x300A-->
+    <RegisterRO name="Dust12VDC" address="12299"/><!-- 0x300B-->
+  </ReadOnlyRegisters>
+
+<!------------------- ReadWriteRegisters -------------------->
+  <ReadWriteRegisters>
+    <RegisterRW name="Commands" address="12800"><!-- 0x3200-->
+      <WriteValues>
+	<WriteValue key="NONE" value="0"/>
+	<WriteValue key="CLOSE" value="1"/>
+	<WriteValue key="OPEN" value="2"/>
+	<WriteValue key="HIGH_OPEN" value="3"/>
+      </WriteValues>
+    </RegisterRW><!-- 0x3200-->
+    <RegisterRW name="EnableSensors1" address="12801"><!-- 0x3201-->
+      <WriteValues>
+	<WriteValue key="ENABLE_ALL" value="65535"/><!-- 0xffff-->
+	<WriteValue key="DISABLE_ALL" value="0"/><!-- 0x0000-->
+      </WriteValues>
+      <Bits>
+	<SingleBit name="EnDL" description="enable daylight" position="0"/> 
+	<SingleBit name="EnDU" description="enable M-dust sensor" position="1"/>
+	<SingleBit name="EnRN" description="enable rain" position="2"/> 
+	<SingleBit name="En1OA" description="enable side 1 open A" position="3"/> 
+	<SingleBit name="En1OB" description="enable side 1 open B" position="4"/> 
+	<SingleBit name="En1CA" description="enable side 1 closed A" position="5"/>
+	<SingleBit name="En1CB" description="enable side 1 closed B" position="6"/> 
+	<SingleBit name="En2OA" description="enable side 2 open A" position="7"/> 
+	<SingleBit name="En2OB" description="enable side 2 open B" position="8"/> 
+	<SingleBit name="En2CA" description="enable side 2 close A" position="9"/> 
+	<SingleBit name="En2CB" description="enable side 2 close B" position="10"/> 
+	<SingleBit name="EnCTR" description="enable control" position="11"/>
+    <SingleBit name="EnDU2" description="enable Dylos dust sensor" position="12"/>
+    <SingleBit name="EnWS" description="enable Weather station" position="13"/>
+      </Bits>
+    </RegisterRW><!-- 0x3201-->
+    <RegisterRW name="WriteDustUpperBound" address="12802"/><!-- 0x3202-->
+    <RegisterRW name="WriteDustLowerBound" address="12803"/><!-- 0x3203-->
+    <RegisterRW name="Control" address="12804"/><!-- 0x3204-->
+    <RegisterRW name="ControlTime" address="12805"/><!-- 0x3205-->
+    <RegisterRW name="OpeningClosingTime" address="12806"/><!-- 0x3206-->
+    <RegisterRW name="ResetRelay" address="12807"><!-- 0x3207-->
+      <WriteValues>
+	<WriteValue key="NONE" value="0"/>
+	<WriteValue key="RESET_RELAY_1" value="1"/>
+	<WriteValue key="RESET_RELAY_2" value="2"/>
+	<WriteValue key="RESET_BOTH" value="3"/>
+      </WriteValues>
+      <Bits>
+	<SingleBit name="R1" description="Reset bit for relay 1" position="0"/> 
+	<SingleBit name="R2" description="Reset bit for relay 2" position="1"/> 
+      </Bits>
+    </RegisterRW><!-- 0x3207-->
+    <RegisterRW name="DASFlags" address="12808"><!-- 0x3208-->
+      <WriteValues>
+	<WriteValue key="GO_ALL" value="65535"/><!-- 0xffff-->
+	<WriteValue key="DONT_GO_ALL" value="0"/><!-- 0x0000-->
+      </WriteValues>
+      <Bits>
+	<SingleBit name="GO1" description="go flag for DAS 1" position="0"/> 
+	<SingleBit name="GO2" description="go flag for DAS 2" position="1"/> 
+	<SingleBit name="GO3" description="go flag for DAS 3" position="2"/> 
+	<SingleBit name="GO4" description="go flag for DAS 4" position="3"/> 
+	<SingleBit name="GO5" description="go flag for DAS 5" position="4"/> 
+	<SingleBit name="GO6" description="go flag for DAS 6" position="5"/> 
+	<SingleBit name="GO7" description="go flag for DAS 7" position="6"/> 
+	<SingleBit name="GO8" description="go flag for DAS 8" position="7"/> 
+	<SingleBit name="GO9" description="go flag for DAS 9" position="8"/> 
+	<SingleBit name="GO10" description="go flag for DAS 10" position="9"/> 
+	<SingleBit name="GO11" description="go flag for DAS 11" position="10"/> 
+	<SingleBit name="GO12" description="go flag for DAS 12" position="11"/> 
+	<SingleBit name="GGO" description="global go flag" position="12"/> 
+      </Bits>
+    </RegisterRW><!-- 0x3208-->
+    <RegisterRW name="EnableSensors2" address="12810"><!-- 0x320A-->
+        <WriteValues>
+            <WriteValue key="ENABLE_ALL" value="65535"/><!-- 0xffff-->
+            <WriteValue key="DISABLE_ALL" value="0"/><!-- 0x0000-->
+        </WriteValues>
+        <Bits>
+            <SingleBit name="EnB1" description="enable breaker 1" position="0"/>
+            <SingleBit name="EnB2" description="enable breaker 2" position="1"/>
+            <SingleBit name="EnB3" description="enable breaker 3" position="2"/>
+            <SingleBit name="EnU1" description="enable ups 1" position="3"/>
+            <SingleBit name="EnU2" description="enable ups 2" position="4"/>
+        </Bits>
+    </RegisterRW><!-- 0x320A-->
+    <RegisterRW name="HeartBeatR" address="12813"/><!-- 0x320D-->
+    <RegisterRW name="HeartBeatW" address="12814"/><!-- 0x320E-->
+    <RegisterRW name="HeartBeatControl" address="12815"><!-- 0x320F-->
+      <Bits>
+	<SingleBit name="Alarm_Weather_mem" description="relay the weather control alarm" position="0"/>
+      </Bits>
+    </RegisterRW><!-- 0x320F-->
+    <RegisterRW name="DylosBigValMax" address="12818"/><!-- 0x3212-->
+    <RegisterRW name="DylosSmallValMax" address="12819"/><!-- 0x3213-->
+    <RegisterRW name="DylosBigValue" address="12820"/><!-- 0x3214-->
+    <RegisterRW name="DylosSmallValue" address="12821"/><!-- 0x3215-->
+    <RegisterRW name="DustPriority" address="12823"><!-- 0x3217-->
+        <WriteValues>
+            <WriteValue key="M_DUST" value="0"/>
+            <WriteValue key="DYLOS" value="1"/>
+            <WriteValue key="DYLOS_BIG_DUST" value="2"/>
+            <WriteValue key="DYLOS_SMALL_DUST" value="3"/>
+            <WriteValue key="MDUST_AND_DYLOS" value="4"/>
+        </WriteValues>
+    </RegisterRW><!-- 0x3217-->
+    <RegisterRW name="DylosDusty" address="12824"/><!-- 0x3218-->
+    <RegisterRW name="OpeningTemporisation" address="12834"/><!-- 0x3222-->
+    <RegisterRW name="ClosingTemporisation" address="12835"/><!-- 0x3223-->
+    
+    <!------ Simulation ------>
+    <RegisterRW name="SIMULATION" address="12888"/><!-- 0x3258-->
+    <RegisterRW name="is_ocs_connected_SIM" address="12889"/><!-- 0x3259-->
+    <RegisterRW name="MDustValue_SIM" address="12893"/><!-- 0x325D-->
+    <RegisterRW name="DylosSmallParticles_SIM" address="12894"/><!-- 0x325E-->
+    <RegisterRW name="DylosBigParticles_SIM" address="12895"/><!-- 0x325F-->
+    <RegisterRW name="SIM_sensor_state" address="12896"><!-- 0x3260-->
+        <Bits>
+            <SingleBit name="SimDS" description="SIM state daylight sensor" position="0"/>
+            <SingleBit name="SimRS" description="SIM state rain sensor" position="1"/>
+            <SingleBit name="SimB1" description="SIM breaker1 state" position="2"/>
+            <SingleBit name="SimB2" description="SIM breaker2 state" position="3"/>
+            <SingleBit name="SimB3" description="SIM breaker3 state" position="4"/>
+            <SingleBit name="SimU1" description="SIM UPS1 state" position="5"/>
+            <SingleBit name="SimU2" description="SIM UPS2 state" position="6"/>
+            <SingleBit name="SimRR1" description="SIM Rain 1" position="7"/>
+            <SingleBit name="SimRR2" description="SIM Rain 2" position="8"/>
+        </Bits>
+    </RegisterRW><!-- 0x3260-->
+    <RegisterRW name="SIM_Roof_State" address="12897"><!-- 0x3261-->
+        <Bits>
+            <SingleBit name="SimC" description="SIM the roof is closing" position="0"/>
+            <SingleBit name="SimO" description="SIM the roof is opening" position="1"/>
+        </Bits>
+    </RegisterRW><!-- 0x3261-->
+    <RegisterRW name="SimSensorsRoofPosition" address="12898"><!-- 0x3262-->
+        <Bits>
+            <SingleBit name="SimSC1A" description="Sim status closed side 1 A" position="0"/>
+            <SingleBit name="SimSC1B" description="Sim status closed side 1 B" position="1"/>
+            <SingleBit name="SimSO1A" description="Sim status open side 1 A" position="2"/>
+            <SingleBit name="SimSO1B" description="Sim status open side 1 B" position="3"/>
+            <SingleBit name="SimSC2A" description="Sim status closed side 2 A" position="4"/>
+            <SingleBit name="SimSC2B" description="Sim status closed side 2 B" position="5"/>
+            <SingleBit name="SimSO2A" description="Sim status open side 2 A" position="6"/>
+            <SingleBit name="SimSO2B" description="Sim status open side 2 B" position="7"/>
+            <SingleBit name="SimEC1A" description="Sim error closed side 1 A" position="8"/>
+            <SingleBit name="SimEC1B" description="Sim error closed side 1 B" position="9"/>
+            <SingleBit name="SimEO1A" description="Sim error open side 1 A" position="10"/>
+            <SingleBit name="SimEO1B" description="Sim error open side 1 B" position="11"/>
+            <SingleBit name="SimEC2A" description="Sim error closed side 2 A" position="12"/>
+            <SingleBit name="SimEC2B" description="Sim error closed side 2 B" position="13"/>
+            <SingleBit name="SimEO2A" description="Sim error open side 2 A" position="14"/>
+            <SingleBit name="SimEO2B" description="Sim error open side 2 B" position="15"/>
+        </Bits>
+    </RegisterRW><!-- 0x3262-->
+    <RegisterRW name="SimMonitoring" address="12900"><!-- 0x3264-->
+        <Bits>
+            <SingleBit name="SimSO" description="Sim stop open" position="0"/>
+            <SingleBit name="SimSC" description="Sim stop close" position="1"/>
+            <SingleBit name="SimAUTO" description="Sim auto" position="2"/>
+            <SingleBit name="SimMAN" description="Sim manuel" position="3"/>
+            <SingleBit name="SimROL1" description="Sim roof open lamp 1" position="4"/>
+            <SingleBit name="SimROL2" description="Sim roof open lamp 2" position="5"/>
+            <SingleBit name="SimRCL1" description="Sim roof close lamp 1" position="6"/>
+            <SingleBit name="SimRCL2" description="Sim roof close lamp 2" position="7"/>
+            <SingleBit name="SimMR" description="Sim main motor" position="8"/>
+            <SingleBit name="SimNMR" description="Sim not main motor" position="9"/>
+            <SingleBit name="SimSRS" description="Sim Safety Relay Stop" position="10"/>
+        </Bits>
+    </RegisterRW><!-- 0x3264-->
+    <RegisterRW name="Sim12V" address="12903"/><!-- 0x3267-->
+    <RegisterRO name="SimAlarms" address="12904"><!-- 0x3268-->
+        <Bits>
+            <SingleBit name="SimAlOut" description="Alarm roof position" position="0"/>
+            <SingleBit name="SimAlWth" description="Alarm weather station" position="1"/>
+        </Bits>
+    </RegisterRO><!-- 0x3268-->
+  </ReadWriteRegisters>
+</PLC>
+
