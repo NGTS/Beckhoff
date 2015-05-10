@@ -2,7 +2,7 @@
 <PLC>
   <!---------------- Settings for the PLC ----------------->
   <ModbusConnection ip="10.2.5.92" port="502" />
-  <Version n1="4" n2="0" n3="0" n4="0"/>
+  <Version n1="4" n2="0" n3="0" n4="1"/>
   <ReadOnlyRegisters>
     <RegisterRO name="RoofPosition" address="12288"><!-- 0x3000-->
       <Bits>
@@ -49,9 +49,7 @@
 	<SingleBit name="O" description="opening!" position="0"/>
 	<SingleBit name="C" description="closing!" position="1"/>
 	<SingleBit name="HAND" description="CMD_HAND" position="2"/>
-	<SingleBit name="B1" description="breaker 1" position="6"/> 
-	<SingleBit name="B2" description="breaker 2" position="7"/> 
-	<SingleBit name="B3" description="breaker 3" position="8"/> 
+	<SingleBit name="B1" description="breaker Surge arrester 6PF16" position="6"/> 
 	<SingleBit name="UPS1" description="UPS1 4" position="9"/> 
 	<SingleBit name="UPS2" description="UPS2 5" position="10"/> 
       </Bits>
@@ -63,7 +61,6 @@
 	<SingleBit name="ER2" description="error side 2" position="2"/> 
 	<SingleBit name="BL1" description="blocked side 1" position="3"/> 
 	<SingleBit name="BL2" description="blocked side 2" position="4"/>
-    <SingleBit name="ALW" description="alarm weather" position="5"/>
     <SingleBit name="PR1" description="position reached 1" position="6"/>
     <SingleBit name="PR2" description="position reached 2" position="7"/>
     <SingleBit name="PR"  description="position reached"   position="8"/>
@@ -87,6 +84,14 @@
       </Bits>
     </RegisterRO><!-- 0x300A-->
     <RegisterRO name="Dust12VDC" address="12299"/><!-- 0x300B-->
+    <RegisterRO name="RoofStatusBlocked" address="122829"><!-- 0x321D-->
+      <Bits>
+	<SingleBit name="BLP1" description="roof1 Not left initial pos" position="0"/> 
+	<SingleBit name="BNAFP1" description="roof1 Not arrived pos" position="1"/> 
+	<SingleBit name="BLP2" description="roof2 Not left initial pos" position="2"/> 
+	<SingleBit name="BNAFP2" description="roof2 Not arrived pos" position="3"/> 
+	  </Bits>
+  	</RegisterRO><!-- 0x321D-->
   </ReadOnlyRegisters>
 
 <!------------------- ReadWriteRegisters -------------------->
@@ -118,7 +123,6 @@
 	<SingleBit name="En2CB" description="enable side 2 close B" position="10"/> 
 	<SingleBit name="EnCTR" description="enable control" position="11"/>
     <SingleBit name="EnDU2" description="enable Dylos dust sensor" position="12"/>
-    <SingleBit name="EnWS" description="enable Weather station" position="13"/>
       </Bits>
     </RegisterRW><!-- 0x3201-->
     <RegisterRW name="WriteDustUpperBound" address="12802"/><!-- 0x3202-->
@@ -165,11 +169,9 @@
             <WriteValue key="DISABLE_ALL" value="0"/><!-- 0x0000-->
         </WriteValues>
         <Bits>
-            <SingleBit name="EnB1" description="enable breaker 1" position="0"/>
-            <SingleBit name="EnB2" description="enable breaker 2" position="1"/>
-            <SingleBit name="EnB3" description="enable breaker 3" position="2"/>
-            <SingleBit name="EnU1" description="enable ups 1" position="3"/>
-            <SingleBit name="EnU2" description="enable ups 2" position="4"/>
+            <SingleBit name="EnB1" description="enable Surge arrester" position="0"/>
+            <SingleBit name="EnU1" description="enable ups 1" position="4"/>
+            <SingleBit name="EnU2" description="enable ups 2" position="5"/>
         </Bits>
     </RegisterRW><!-- 0x320A-->
     <RegisterRW name="HeartBeatR" address="12813"/><!-- 0x320D-->
@@ -179,20 +181,13 @@
 	<SingleBit name="Alarm_Weather_mem" description="relay the weather control alarm" position="0"/>
       </Bits>
     </RegisterRW><!-- 0x320F-->
-    <RegisterRW name="DylosBigValMax" address="12818"/><!-- 0x3212-->
-    <RegisterRW name="DylosSmallValMax" address="12819"/><!-- 0x3213-->
     <RegisterRW name="DylosBigValue" address="12820"/><!-- 0x3214-->
     <RegisterRW name="DylosSmallValue" address="12821"/><!-- 0x3215-->
-    <RegisterRW name="DustPriority" address="12823"><!-- 0x3217-->
-        <WriteValues>
-            <WriteValue key="M_DUST" value="0"/>
-            <WriteValue key="DYLOS" value="1"/>
-            <WriteValue key="DYLOS_BIG_DUST" value="2"/>
-            <WriteValue key="DYLOS_SMALL_DUST" value="3"/>
-            <WriteValue key="MDUST_AND_DYLOS" value="4"/>
-        </WriteValues>
-    </RegisterRW><!-- 0x3217-->
-    <RegisterRW name="DylosDusty" address="12824"/><!-- 0x3218-->
+    <RegisterRW name="reset_mem" address="12828"/><!-- 0x321C--> 
+    
+    <RegisterRW name="NotLeftTime" address="12830"/><!-- 0x321E--> 
+    <RegisterRW name="NotArrivedTime" address="12831"/><!-- 0x321F--> 
+       
     <RegisterRW name="OpeningTemporisation" address="12834"/><!-- 0x3222-->
     <RegisterRW name="ClosingTemporisation" address="12835"/><!-- 0x3223-->
     
@@ -206,9 +201,7 @@
         <Bits>
             <SingleBit name="SimDS" description="SIM state daylight sensor" position="0"/>
             <SingleBit name="SimRS" description="SIM state rain sensor" position="1"/>
-            <SingleBit name="SimB1" description="SIM breaker1 state" position="2"/>
-            <SingleBit name="SimB2" description="SIM breaker2 state" position="3"/>
-            <SingleBit name="SimB3" description="SIM breaker3 state" position="4"/>
+            <SingleBit name="SimB1" description="SIM breaker6PF16 state" position="2"/>
             <SingleBit name="SimU1" description="SIM UPS1 state" position="5"/>
             <SingleBit name="SimU2" description="SIM UPS2 state" position="6"/>
             <SingleBit name="SimRR1" description="SIM Rain 1" position="7"/>
@@ -260,7 +253,6 @@
     <RegisterRO name="SimAlarms" address="12904"><!-- 0x3268-->
         <Bits>
             <SingleBit name="SimAlOut" description="Alarm roof position" position="0"/>
-            <SingleBit name="SimAlWth" description="Alarm weather station" position="1"/>
         </Bits>
     </RegisterRO><!-- 0x3268-->
   </ReadWriteRegisters>
