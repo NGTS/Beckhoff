@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <PLC>
     <!-- Settings for the PLC -->
+    <!-- To be updated with paranal IPs-->
     <ModbusConnection ip="129.194.67.129" port="502" />
     <Version n1="0" n2="0" n3="0" n4="0"/> 
     <ReadOnlyRegisters>
@@ -11,7 +12,8 @@
 			<SingleBit name="PA2" description="Status of the Power for Container Aircon 2" position="2"/> 
 		</Bits>
 	</RegisterRO>
-
+	<!-- The 2 dust sensors have been moved as well as the the device on the beckhoff thus things needs to be updated-->
+	<!-- The thermal sensors are still there-->
 	<RegisterRO name="M-DustValue" address="16484"/><!-- 0x4064-->
         <RegisterRO name="T1" address="16486"/><!-- 0x40066-->
         <RegisterRO name="T2" address="16487"/><!-- 0x4067-->
