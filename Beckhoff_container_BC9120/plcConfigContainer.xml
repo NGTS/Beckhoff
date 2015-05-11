@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<PLC>
+    <!-- Settings for the PLC -->
+    <ModbusConnection ip="129.194.67.129" port="502" />
+    <Version n1="0" n2="0" n3="0" n4="0"/> 
+    <ReadOnlyRegisters>
+        <RegisterRO name="ContainerIO" address="16485"><!-- 0x4065-->
+		<Bits>
+			<SingleBit name="S1" description="Container surge protection" position="0"/> 
+			<SingleBit name="PA1" description="Status of the Power for Container Aircon 1" position="1"/> 
+			<SingleBit name="PA2" description="Status of the Power for Container Aircon 2" position="2"/> 
+		</Bits>
+	</RegisterRO>
+
+	<RegisterRO name="M-DustValue" address="16484"/><!-- 0x4064-->
+        <RegisterRO name="T1" address="16486"/><!-- 0x40066-->
+        <RegisterRO name="T2" address="16487"/><!-- 0x4067-->
+        <RegisterRO name="T3" address="16488"/><!-- 0x4068-->
+	<RegisterRO name="DylosDustBig" address="17448"/><!-- 0x4428-->
+        <RegisterRO name="DylosDustSmall" address="17449"/><!-- 0x4429-->
+	
+        <RegisterRO name="SoftwareVersioning1" address="16392"/><!-- 0x4008-->
+        <RegisterRO name="SoftwareVersioning2" address="16393"/><!-- 0x4009-->
+	
+    </ReadOnlyRegisters>
+    <ReadWriteRegisters>
+	<RegisterRW name="ContainerAirconControl" address="16434"><!-- 0x4032-->
+		<Bits>
+			<SingleBit name="DisAC1" description="Disable Container Aircon 1" position="0"/> 
+			<SingleBit name="DisAC2" description="Disable Container Aircon 2" position="1"/> 
+		</Bits>
+	</RegisterRW>
+    </ReadWriteRegisters>
+</PLC>
+
