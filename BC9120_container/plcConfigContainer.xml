@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<PLC>
+    <!-- Settings for the PLC -->
+    <ModbusConnection ip="10.2.5.91" port="502" />
+    <Version n1="1" n2="0" n3="0" n4="0"/> 
+    
+    <ReadOnlyRegisters>
+    <RegisterRO name="SoftwareVersioning1" address="16392"/><!-- 0x4008-->
+ 	<RegisterRO name="SoftwareVersioning2" address="16393"/><!-- 0x4009-->
+   	<RegisterRO name="SP" description="Surge arrester" address="16435"/><!-- 0x4033-->
+    </ReadOnlyRegisters>
+    
+    <ReadWriteRegisters>
+	<RegisterRW name="ContainerAirconControl" address="16434"><!-- 0x4032-->
+		<Bits>
+			<SingleBit name="DisAC1" description="Disable Container Aircon 1" position="0"/> 
+			<SingleBit name="DisAC2" description="Disable Container Aircon 2" position="1"/> 
+		</Bits>
+	</RegisterRW>
+    <RegisterRW name="Tcomp" description="Temp. Computer Room" address="16436"/><!-- 0x4034-->
+    <RegisterRW name="Tcont" description="Temp. Control Room" address="16437"/><!-- 0x4035-->
+    <RegisterRW name="Hcomp" description="Humidity Computer Room" address="16439"/><!-- 0x4037-->
+    </ReadWriteRegisters>
+</PLC>
+

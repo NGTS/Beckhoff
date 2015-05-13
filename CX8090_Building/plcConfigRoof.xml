@@ -125,44 +125,9 @@
     <SingleBit name="EnDU2" description="enable Dylos dust sensor" position="12"/>
       </Bits>
     </RegisterRW><!-- 0x3201-->
-    <RegisterRW name="WriteDustUpperBound" address="12802"/><!-- 0x3202-->
-    <RegisterRW name="WriteDustLowerBound" address="12803"/><!-- 0x3203-->
     <RegisterRW name="Control" address="12804"/><!-- 0x3204-->
     <RegisterRW name="ControlTime" address="12805"/><!-- 0x3205-->
     <RegisterRW name="OpeningClosingTime" address="12806"/><!-- 0x3206-->
-    <RegisterRW name="ResetRelay" address="12807"><!-- 0x3207-->
-      <WriteValues>
-	<WriteValue key="NONE" value="0"/>
-	<WriteValue key="RESET_RELAY_1" value="1"/>
-	<WriteValue key="RESET_RELAY_2" value="2"/>
-	<WriteValue key="RESET_BOTH" value="3"/>
-      </WriteValues>
-      <Bits>
-	<SingleBit name="R1" description="Reset bit for relay 1" position="0"/> 
-	<SingleBit name="R2" description="Reset bit for relay 2" position="1"/> 
-      </Bits>
-    </RegisterRW><!-- 0x3207-->
-    <RegisterRW name="DASFlags" address="12808"><!-- 0x3208-->
-      <WriteValues>
-	<WriteValue key="GO_ALL" value="65535"/><!-- 0xffff-->
-	<WriteValue key="DONT_GO_ALL" value="0"/><!-- 0x0000-->
-      </WriteValues>
-      <Bits>
-	<SingleBit name="GO1" description="go flag for DAS 1" position="0"/> 
-	<SingleBit name="GO2" description="go flag for DAS 2" position="1"/> 
-	<SingleBit name="GO3" description="go flag for DAS 3" position="2"/> 
-	<SingleBit name="GO4" description="go flag for DAS 4" position="3"/> 
-	<SingleBit name="GO5" description="go flag for DAS 5" position="4"/> 
-	<SingleBit name="GO6" description="go flag for DAS 6" position="5"/> 
-	<SingleBit name="GO7" description="go flag for DAS 7" position="6"/> 
-	<SingleBit name="GO8" description="go flag for DAS 8" position="7"/> 
-	<SingleBit name="GO9" description="go flag for DAS 9" position="8"/> 
-	<SingleBit name="GO10" description="go flag for DAS 10" position="9"/> 
-	<SingleBit name="GO11" description="go flag for DAS 11" position="10"/> 
-	<SingleBit name="GO12" description="go flag for DAS 12" position="11"/> 
-	<SingleBit name="GGO" description="global go flag" position="12"/> 
-      </Bits>
-    </RegisterRW><!-- 0x3208-->
     <RegisterRW name="EnableSensors2" address="12810"><!-- 0x320A-->
         <WriteValues>
             <WriteValue key="ENABLE_ALL" value="65535"/><!-- 0xffff-->
@@ -174,13 +139,6 @@
             <SingleBit name="EnU2" description="enable ups 2" position="5"/>
         </Bits>
     </RegisterRW><!-- 0x320A-->
-    <RegisterRW name="HeartBeatR" address="12813"/><!-- 0x320D-->
-    <RegisterRW name="HeartBeatW" address="12814"/><!-- 0x320E-->
-    <RegisterRW name="HeartBeatControl" address="12815"><!-- 0x320F-->
-      <Bits>
-	<SingleBit name="Alarm_Weather_mem" description="relay the weather control alarm" position="0"/>
-      </Bits>
-    </RegisterRW><!-- 0x320F-->
     <RegisterRW name="DylosBigValue" address="12820"/><!-- 0x3214-->
     <RegisterRW name="DylosSmallValue" address="12821"/><!-- 0x3215-->
     <RegisterRW name="reset_mem" address="12828"/><!-- 0x321C--> 
@@ -189,7 +147,9 @@
     <RegisterRW name="NotArrivedTime" address="12831"/><!-- 0x321F--> 
        
     <RegisterRW name="OpeningTemporisation" address="12834"/><!-- 0x3222-->
-    <RegisterRW name="ClosingTemporisation" address="12835"/><!-- 0x3223-->
+    <RegisterRW name="ClosingTemporisation" address="12836"/><!-- 0x3224-->
+    <RegisterRW name="PowerOffMountsTime" address="12838"/><!-- 0x3226-->
+    <RegisterRW name="ResetPowerOffMounts" address="12840"/><!-- 0x3228-->
     
     <!------ Simulation ------>
     <RegisterRW name="SIMULATION" address="12888"/><!-- 0x3258-->
