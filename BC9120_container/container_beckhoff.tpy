@@ -2,9 +2,9 @@
 <!--This file is created by the TCatPlcCtrl automatically. Manually changes will be overwritten!-->
 <PlcProjectInfo xmlns:p="http://www.beckhoff.com/2002/01/TcPlcProjectDesc">
 	<ProjectInfo>
-		<Path>C:\Documents and Settings\lambergr\Desktop\Beckhoff_container\container_beckhoff.prx</Path>
+		<Path>E:\BC9120_container\container_beckhoff.prx</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2015-04-24T15:33:32</ChangeDate>
+		<ChangeDate>2015-05-13T04:39:10</ChangeDate>
 		<Library>
 			<Name>COMlibV2.lb6</Name>
 			<Path>C:\TWINCAT\PLC\LIB\COMlibV2.lb6</Path>
@@ -2933,19 +2933,47 @@
 	</Functions>
 	<Programs>
 		<Program>
-			<Name Decoration="10000000" Crc32="2750297245" LastChange="2015-04-24T15:33:32">Clim</Name>
+			<Name Decoration="10000000" Crc32="1039889308" LastChange="2015-05-13T04:39:10">Aircon</Name>
 			<PrgInfo>
 				<CodeIndex>159</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="1698848601" LastChange="2015-04-24T15:31:27">MAIN</Name>
+			<Name Decoration="10000000" Crc32="1359811955" LastChange="2015-05-13T04:39:10">Humidity</Name>
+			<PrgInfo>
+				<CodeIndex>160</CodeIndex>
+			</PrgInfo>
+		</Program>
+		<Program>
+			<Name Decoration="10000000" Crc32="2755995300" LastChange="2015-05-13T04:39:10">MAIN</Name>
+			<PrgInfo>
+				<CodeIndex>161</CodeIndex>
+			</PrgInfo>
+		</Program>
+		<Program>
+			<Name Decoration="100105C8" Crc32="0201338197" LastChange="2015-05-13T04:39:10">SurgeArrester</Name>
+			<PrgInfo>
+				<CodeIndex>162</CodeIndex>
+				<Symbol>
+					<Name>SurgeArrester.surgeProtec_mem</Name>
+				</Symbol>
+			</PrgInfo>
+		</Program>
+		<Program>
+			<Name Decoration="10000000" Crc32="1944833970" LastChange="2015-05-13T04:39:10">Temperature</Name>
 			<PrgInfo>
 				<CodeIndex>163</CodeIndex>
 			</PrgInfo>
 		</Program>
 	</Programs>
 	<Symbols>
+		<Symbol>
+			<Name TaskPrio="1">SurgeArrester.surgeProtec_mem</Name>
+			<Type>BOOL</Type>
+			<IGroup>16448</IGroup>
+			<IOffset>322</IOffset>
+			<BitSize>8</BitSize>
+		</Symbol>
 		<Symbol>
 			<Name Constant="1" Static="MArea">.MAJOR</Name>
 			<Type>USINT</Type>
@@ -2989,72 +3017,88 @@
 			<BitSize>168</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Input">.SURGE_PROTEC</Name>
+			<Name Static="Input" TaskPrio="1">.input_surgeProtec</Name>
 			<Type>BOOL</Type>
-			<Comment>
-				<![CDATA[HUMID	AT%IW204:INT;
-	T1	AT%IW206:INT;
-	T2	AT%IW208:INT;
-	T3	AT%IW210:INT;]]>
-			</Comment>
 			<IGroup>61473</IGroup>
 			<IOffset>1616</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Output" TaskPrio="1">.Q_CutPower_Air_Cond_1</Name>
+			<Name Static="Input" TaskPrio="1">.input_T_computerRoom</Name>
+			<Type>INT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset>210</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">.input_T_controlRoom</Name>
+			<Type>INT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset>214</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Input" TaskPrio="1">.input_H_computerRoom</Name>
+			<Type>INT</Type>
+			<IGroup>61472</IGroup>
+			<IOffset>220</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="Output" TaskPrio="1">.Q_CutPower_Air_Con_1</Name>
 			<Type>BOOL</Type>
 			<IGroup>61489</IGroup>
 			<IOffset>800</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="Output" TaskPrio="1">.Q_CutPower_Air_Cond_2</Name>
+			<Name Static="Output" TaskPrio="1">.Q_CutPower_Air_Con_2</Name>
 			<Type>BOOL</Type>
 			<IGroup>61489</IGroup>
 			<IOffset>801</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea">.Breaker_container</Name>
-			<Type>BOOL</Type>
-			<IGroup>16417</IGroup>
-			<IOffset>1616</IOffset>
-			<BitSize>1</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.CutPower_Air_Cond_1</Name>
-			<Type>BOOL</Type>
-			<IGroup>16417</IGroup>
-			<IOffset>1617</IOffset>
-			<BitSize>1</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.CutPower_Air_Cond_2</Name>
-			<Type>BOOL</Type>
-			<Comment>
-				<![CDATA[M_HUMID AT%MW204:INT;
-	M_T1 AT%MW206:INT;
-	M_T2 AT%MW208:INT;
-	M_T3 AT%MW210:INT;]]>
-			</Comment>
-			<IGroup>16417</IGroup>
-			<IOffset>1618</IOffset>
-			<BitSize>1</BitSize>
-		</Symbol>
-		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.Power_Air_Cond_1_mem</Name>
+			<Name Static="MArea" TaskPrio="1">.Power_Air_Con_1_mem</Name>
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
 			<IOffset>801</IOffset>
 			<BitSize>1</BitSize>
 		</Symbol>
 		<Symbol>
-			<Name Static="MArea" TaskPrio="1">.Power_Air_Cond_2_mem</Name>
+			<Name Static="MArea" TaskPrio="1">.Power_Air_Con_2_mem</Name>
 			<Type>BOOL</Type>
 			<IGroup>16417</IGroup>
 			<IOffset>802</IOffset>
 			<BitSize>1</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea">.surgeProtec_mem</Name>
+			<Type>BOOL</Type>
+			<IGroup>16417</IGroup>
+			<IOffset>816</IOffset>
+			<BitSize>1</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea" TaskPrio="1">.T_computerRoom_mem</Name>
+			<Type>INT</Type>
+			<IGroup>16416</IGroup>
+			<IOffset>104</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea" TaskPrio="1">.T_controlRoom_mem</Name>
+			<Type>INT</Type>
+			<IGroup>16416</IGroup>
+			<IOffset>106</IOffset>
+			<BitSize>16</BitSize>
+		</Symbol>
+		<Symbol>
+			<Name Static="MArea" TaskPrio="1">.H_computerRoom_mem</Name>
+			<Type>INT</Type>
+			<IGroup>16416</IGroup>
+			<IOffset>110</IOffset>
+			<BitSize>16</BitSize>
 		</Symbol>
 	</Symbols>
 	<VarConfigs/>
