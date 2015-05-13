@@ -4,7 +4,7 @@
 	<ProjectInfo>
 		<Path>E:\BC9120_container\container_beckhoff.prx</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2015-05-13T04:46:52</ChangeDate>
+		<ChangeDate>2015-05-13T04:54:22</ChangeDate>
 		<Library>
 			<Name>COMlibV2.lb6</Name>
 			<Path>C:\TWINCAT\PLC\LIB\COMlibV2.lb6</Path>
@@ -2933,25 +2933,25 @@
 	</Functions>
 	<Programs>
 		<Program>
-			<Name Decoration="10000000" Crc32="1039889308" LastChange="2015-05-13T04:46:51">Aircon</Name>
+			<Name Decoration="10000000" Crc32="1039889308" LastChange="2015-05-13T04:54:22">Aircon</Name>
 			<PrgInfo>
 				<CodeIndex>159</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="1359811955" LastChange="2015-05-13T04:46:51">Humidity</Name>
+			<Name Decoration="10000000" Crc32="1359811955" LastChange="2015-05-13T04:54:22">Humidity</Name>
 			<PrgInfo>
 				<CodeIndex>160</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="2755995300" LastChange="2015-05-13T04:46:51">MAIN</Name>
+			<Name Decoration="10000000" Crc32="2755995300" LastChange="2015-05-13T04:54:22">MAIN</Name>
 			<PrgInfo>
 				<CodeIndex>161</CodeIndex>
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="100105C8" Crc32="0201338197" LastChange="2015-05-13T04:46:51">SurgeArrester</Name>
+			<Name Decoration="100105C8" Crc32="0201338197" LastChange="2015-05-13T04:54:22">SurgeArrester</Name>
 			<PrgInfo>
 				<CodeIndex>162</CodeIndex>
 				<Symbol>
@@ -2960,7 +2960,7 @@
 			</PrgInfo>
 		</Program>
 		<Program>
-			<Name Decoration="10000000" Crc32="1944833970" LastChange="2015-05-13T04:46:51">Temperature</Name>
+			<Name Decoration="10000000" Crc32="1944833970" LastChange="2015-05-13T04:54:22">Temperature</Name>
 			<PrgInfo>
 				<CodeIndex>163</CodeIndex>
 			</PrgInfo>
