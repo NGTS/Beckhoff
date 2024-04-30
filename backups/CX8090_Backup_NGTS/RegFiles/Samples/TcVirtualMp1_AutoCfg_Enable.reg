@@ -1,0 +1,5 @@
+;-------------------------------------------------------------------------------
+; Beckhoff TcVirtualMp driver: Enable AutoCfg for TcVirtualMp1
+;-------------------------------------------------------------------------------
+[HKEY_LOCAL_MACHINE\Comm\TcVirtualMp1\Parms\TcpIp]
+    "AutoCfg"=dword:1
